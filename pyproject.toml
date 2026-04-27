@@ -1,0 +1,61 @@
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[project]
+name = "jailbreak-corpus-mini-py"
+version = "0.1.0"
+description = "Small local jailbreak and prompt-injection fixture set for tests. Python port of @mukundakatta/jailbreak-corpus-mini."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Mukunda Rao Katta", email = "mukunda.vjcs6@gmail.com" }]
+keywords = [
+  "ai",
+  "llm",
+  "agents",
+  "evals",
+  "safety",
+  "guardrails",
+  "jailbreak",
+  "prompt-injection",
+  "security",
+  "fixtures",
+  "test-data",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Security",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.urls]
+Homepage = "https://github.com/MukundaKatta/jailbreak-corpus-mini-py"
+Issues = "https://github.com/MukundaKatta/jailbreak-corpus-mini-py/issues"
+Source = "https://github.com/MukundaKatta/jailbreak-corpus-mini-py"
+"JS sibling" = "https://github.com/MukundaKatta/jailbreak-corpus-mini"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/jailbreak_corpus_mini"]
+
+[tool.hatch.build.targets.sdist]
+include = ["/src", "/tests", "/README.md", "/LICENSE"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
